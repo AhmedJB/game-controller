@@ -64,9 +64,55 @@ function MainInterface({}: Props) {
                           Replay Set Speed Value
                         </label>
                         <input type="number" className="form-control" />
-                        <small>
+                        <small className="float-end">
                           <strong>1.0</strong>
                         </small>
+                      </div>
+                      {/* SLEEP_TRIGGER_DURATION */}
+                      <div className="mb-4">
+                        <label className="form-label">
+                          SLEEP_TRIGGER_DURATION (in minute)
+                        </label>
+                        <input type="number" className="form-control" />
+                      </div>
+                      {/* SLEEP_WINDOW */}
+                      <div className="mb-4">
+                        <label className="form-label">SLEEP_WINDOW</label>
+                        <input type="number" className="form-control" />
+                      </div>
+                      {/* HOMEPEN1NUM */}
+                      <div className="mb-4">
+                        <label className="form-label">HOMEPEN1NUM</label>
+                        <input type="number" className="form-control" />
+                      </div>
+                      {/* HOMEPEN2NUM */}
+                      <div className="mb-4">
+                        <label className="form-label">HOMEPEN2NUM</label>
+                        <input type="number" className="form-control" />
+                      </div>
+                      {/* AWAYPEN1NUM */}
+                      <div className="mb-4">
+                        <label className="form-label">AWAYPEN1NUM</label>
+                        <input type="number" className="form-control" />
+                      </div>
+                      {/* AWAYPEN2NUM */}
+                      <div className="mb-4">
+                        <label className="form-label">AWAYPEN2NUM</label>
+                        <input type="number" className="form-control" />
+                      </div>
+                      {/* Replay Export Switch */}
+                      <div className="mb-4">
+                        <label className="form-label">
+                          Replay Export Switch
+                        </label>
+                        <span className="form-check form-switch">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="flexSwitchCheckChecked"
+                          />
+                        </span>
                       </div>
                       {/* Replay Export Folder */}
                       <div className="mb-4">
