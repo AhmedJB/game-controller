@@ -74,8 +74,8 @@ class Worker:
                 # checking the gameclock value changes should be enough
                 # if the controller is off and the value didn't change
                 # for 10 min then we trigger the sleep Input ( please verify the input number on your end)
-                if self.previous_data["gameclock"] == data["gameclock"] and (time.time() - last_record_time) > SLEEP_TRIGGER_DURATION * 60 and not SCRIPT_IN_SLEEP_MODE:
-                    SCRIPT_IN_SLEEP_MODE = True
+                if self.previous_data["gameclock"] == data["gameclock"] and (time.time() - self.last_update_time) > SLEEP_TRIGGER_DURATION * 60 and not self.SCRIPT_IN_SLEEP_MODE:
+                    self.SCRIPT_IN_SLEEP_MODE = True
                     print(
                         f"Triggering Sleep input as there was no update for 10 minutes")
                     # please change the input number to the correct one here
@@ -91,21 +91,21 @@ class Worker:
                         self.previous_data["period"] = current_period
 
                     # Check for empty gameclock and trigger only once
-                    if data["gameclock"] == "" and not play_input_15_triggered:
+                    if data["gameclock"] == "" and not self.play_input_15_triggered:
                         self.send_vmix_command("QuickPlay", value="Input=15")
                         print(
                             "Detected empty gameclock. Sent command to play input 15.")
-                        play_input_15_triggered = True
-                    elif data["gameclock"] and play_input_15_triggered:
+                        self.play_input_15_triggered = True
+                    elif data["gameclock"] and self.play_input_15_triggered:
                         # Reset trigger if gameclock is no longer empty
-                        play_input_15_triggered = False
+                        self.play_input_15_triggered = False
 
                     # Check if it's time to start recording again
-                    if time.time() - last_record_time > REPLAY_START_RECORDING_INTERVAL_MINUTES * 60:
+                    if time.time() - self.last_record_time > REPLAY_START_RECORDING_INTERVAL_MINUTES * 60:
                         self.send_vmix_command("ReplayStartRecording")
                         print(
                             f"ReplayStartRecording command sent at {time.strftime('%Y-%m-%d %H:%M:%S')}")
-                        last_record_time = time.time()
+                        self.last_record_time = time.time()
 
                     # Check penalties for the first change
                     if self.previous_data["HomePen1num"] == "" and data["HomePen1num"] != "":
@@ -140,7 +140,7 @@ class Worker:
                         # "period" is already updated above
                     })
                     # we update the update timestamp
-                    last_update_time = time.time()
+                    self.last_update_time = time.time()
 
             except requests.exceptions.RequestException as e:
                 print(f"HTTP Request Error: {e}")

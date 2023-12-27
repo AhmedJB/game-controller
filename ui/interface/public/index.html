@@ -1,118 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>HarrisTime</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <section class="my-5">
-      <div class="container">
-        <div class="text-center">
-          <img class="mb-4" src="img/logo.png" />
-        </div>
-        <div class="row">
-          <div class="col-md-7 d-flex align-items-stretch">
-            <div class="card flex-grow-1">
-              <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="true" href="#!"
-                      >Settings</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#!">Print Report</a>
-                  </li>
-                </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>HarrisTime</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <section class="my-5">
+    <div class="container">
+      <div class="text-center">
+        <img class="mb-4" src="img/logo.png" />
+      </div>
+      <div class="row">
+        <div class="col-md-7 d-flex align-items-stretch">
+          <div class="card flex-grow-1">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="true" href="#!">Settings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!">Print Report</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- JSON URL -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" class="form-control" />
+                <label class="form-label">JSON URL</label>
               </div>
-              <div class="card-body">
-                <!-- JSON URL -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" class="form-control" />
-                  <label class="form-label">JSON URL</label>
-                </div>
 
-                <!-- VMIX URL -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" class="form-control" />
-                  <label class="form-label">VMIX URL</label>
-                </div>
-
-                <!-- Check Interval -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="number" class="form-control" />
-                  <label class="form-label">Check Interval (in Seconds)</label>
-                </div>
-
-                <!-- Replay Set Speed Value -->
-                <div data-mdb-input-init class="form-outline mb-4 text-center">
-                  <input type="number" class="form-control" />
-                  <label class="form-label">Replay Set Speed Value</label>
-                  <small><strong>1.0</strong></small>
-                </div>
-
-                <!-- Replay Export Folder -->
-                <div class="mb-4">
-                  <label class="form-label">Replay Export Folder</label>
-                  <input type="file" class="form-control" />
-                </div>
-
-                <a href="#" class="btn btn-primary" data-mdb-ripple-init
-                  >Save</a
-                >
-                <a href="#" class="btn btn-primary" data-mdb-ripple-init
-                  >Exit</a
-                >
+              <!-- VMIX URL -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" class="form-control" />
+                <label class="form-label">VMIX URL</label>
               </div>
+
+              <!-- Check Interval -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="number" class="form-control" />
+                <label class="form-label">Check Interval (in Seconds)</label>
+              </div>
+
+              <!-- Replay Set Speed Value -->
+              <div data-mdb-input-init class="form-outline mb-4 text-center">
+                <input type="number" class="form-control" />
+                <label class="form-label">Replay Set Speed Value</label>
+                <small><strong>1.0</strong></small>
+              </div>
+
+              <!-- Replay Export Folder -->
+              <div class="mb-4">
+                <label class="form-label">Replay Export Folder</label>
+                <input type="file" class="form-control" />
+              </div>
+
+              <a href="#" class="btn btn-primary" data-mdb-ripple-init>Save</a>
+              <a href="#" class="btn btn-primary" data-mdb-ripple-init>Exit</a>
             </div>
           </div>
-          <div class="col-md-5 d-flex align-items-stretch">
-            <div class="card flex-grow-1">
-              <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="true" href="#!"
-                      >Output</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <!-- Output -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <textarea
-                    class="form-control"
-                    placeholder="No Data"
-                    rows="15"
-                    cols="15"
-                  ></textarea>
-                </div>
+        </div>
+        <div class="col-md-5 d-flex align-items-stretch">
+          <div class="card flex-grow-1">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="true" href="#!">Output</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <!-- Output -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <textarea class="form-control" placeholder="No Data" rows="15" cols="15"></textarea>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <script type="text/javascript" src="js/mdb.umd.min.js"></script>
-  </body>
+    </div>
+  </section>
+
+</body>
+
 </html>
