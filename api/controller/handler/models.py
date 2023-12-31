@@ -17,3 +17,9 @@ class Settings(models.Model):
     awaypen1num_input = models.IntegerField(default=13)
     awaypen2num_input = models.IntegerField(default=14)
     quickplay_input = models.IntegerField(default=15)
+    export_folder = models.CharField(max_length=500, default="")
+
+
+class Logs(models.Model):
+    message = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
