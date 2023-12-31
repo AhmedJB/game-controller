@@ -1,0 +1,314 @@
+[
+  [
+    {
+      "gameclock": "20:00",
+      "homescore": "2",
+      "awayscore": "0",
+      "period": "1",
+      "HomePen1num": "32",
+      "homepen1clock": "2:00",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:46:15.689"
+    }
+  ],
+  [
+    {
+      "gameclock": "0.0",
+      "homescore": "0",
+      "awayscore": "0",
+      "period": "0",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:48:33.577"
+    }
+  ],
+  [
+    {
+      "gameclock": "20:00",
+      "homescore": "0",
+      "awayscore": "0",
+      "period": "1",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:48:51.285"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "19:56",
+      "homescore": "0",
+      "awayscore": "0",
+      "period": "1",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:49:05.550"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "19:54",
+      "homescore": "0",
+      "awayscore": "0",
+      "period": "1",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:49:18.755"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "19:51",
+      "homescore": "1",
+      "awayscore": "0",
+      "period": "1",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:49:37.799"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "19:48",
+      "homescore": "1",
+      "awayscore": "1",
+      "period": "1",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:49:49.923"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "19:35",
+      "homescore": "1",
+      "awayscore": "1",
+      "period": "1",
+      "HomePen1num": "32",
+      "homepen1clock": "2:00",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:50:05.487"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "19:30",
+      "homescore": "1",
+      "awayscore": "1",
+      "period": "1",
+      "HomePen1num": "32",
+      "homepen1clock": "1:53",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:50:34.772"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "19:18",
+      "homescore": "2",
+      "awayscore": "1",
+      "period": "1",
+      "HomePen1num": "32",
+      "homepen1clock": "1:41",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "",
+      "awaypen1clock": "",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:50:46.697"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "18:57",
+      "homescore": "2",
+      "awayscore": "1",
+      "period": "1",
+      "HomePen1num": "32",
+      "homepen1clock": "1:20",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "14",
+      "awaypen1clock": "2:00",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:51:10.368"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "18:53",
+      "homescore": "2",
+      "awayscore": "1",
+      "period": "1",
+      "HomePen1num": "32",
+      "homepen1clock": "1:16",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "14",
+      "awaypen1clock": "1:56",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:51:25.136"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "18:35",
+      "homescore": "2",
+      "awayscore": "2",
+      "period": "1",
+      "HomePen1num": "32",
+      "homepen1clock": "0:58",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "14",
+      "awaypen1clock": "1:38",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:51:45.754"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "18:34",
+      "homescore": "2",
+      "awayscore": "2",
+      "period": "1",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "14",
+      "awaypen1clock": "1:37",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 03:52:07.394"
+    }
+  ],
+
+  [
+    {
+      "gameclock": "18:34",
+      "homescore": "2",
+      "awayscore": "2",
+      "period": "1",
+      "HomePen1num": "",
+      "homepen1clock": "",
+      "homepen2num": "",
+      "homepen2clock": "",
+      "awaypen1num": "14",
+      "awaypen1clock": "1:37",
+      "awaypen2number": "",
+      "awaypen2clock": "",
+      "awaysog": "",
+      "homesog": "",
+      "Sport": "Hockey",
+      "Timestamp": "2023-12-27 04:02:29.087"
+    }
+  ]
+]

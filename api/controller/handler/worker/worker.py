@@ -1,16 +1,18 @@
 import requests
 import time
-from constants import REPLAY_START_RECORDING_INTERVAL_MINUTES, REPLAY_EXPORT_FOLDER, REPLAY_EXPORT_SWITCH, REPLAY_SET_SPEED_VALUE, JSON_URL, VMIX_URL, CHECK_INTERVAL_SECONDS, SLEEP_TRIGGER_DURATION, SLEEP_WINDOW_INPUT, HOMEPEN1NUM_INPUT, HOMEPEN2NUM_INPUT, AWAYPEN1NUM_INPUT, AWAYPEN2NUM_INPUT
+from constants import REPLAY_START_RECORDING_INTERVAL_MINUTES, REPLAY_EXPORT_FOLDER, REPLAY_EXPORT_SWITCH, REPLAY_SET_SPEED_VALUE, JSON_URL, VMIX_URL, CHECK_INTERVAL_SECONDS, SLEEP_TRIGGER_DURATION, SLEEP_WINDOW_INPUT, HOMEPEN1NUM_INPUT, HOMEPEN2NUM_INPUT, AWAYPEN1NUM_INPUT, AWAYPEN2NUM_INPUT, QUICKPLAY_INPUT
 
 
 class Worker:
 
     def __init__(self):
         self.previous_data = {
-            "homescore": None,
-            "awayscore": None,
+            "homescore": "0",
+            "awayscore": "0",
             "HomePen1num": None,
             "homepen2num": None,
+            "awaypen1num": None,
+            "awaypen2number": None,
             "gameclock": None,
             "period": None
         }
@@ -26,6 +28,8 @@ class Worker:
         print(
             f"ReplayStartRecording will execute every {REPLAY_START_RECORDING_INTERVAL_MINUTES} minutes.")
         print(f"The ReplaySetSpeed value is set to {REPLAY_SET_SPEED_VALUE}.")
+
+        # state variables here
 
     def send_vmix_command(self, command, value=None):
         """
@@ -65,6 +69,9 @@ class Worker:
     def run(self):
         while True:
             try:
+                if (JSON_URL == ""):
+                    print("No JSON URL defined")
+                    continue
                 # Fetch the current game data
                 response = requests.get(JSON_URL)
                 response.raise_for_status()
@@ -92,7 +99,8 @@ class Worker:
 
                     # Check for empty gameclock and trigger only once
                     if data["gameclock"] == "" and not self.play_input_15_triggered:
-                        self.send_vmix_command("QuickPlay", value="Input=15")
+                        self.send_vmix_command(
+                            "QuickPlay", value="Input={0}".format(QUICKPLAY_INPUT))
                         print(
                             "Detected empty gameclock. Sent command to play input 15.")
                         self.play_input_15_triggered = True
@@ -120,8 +128,22 @@ class Worker:
                         print(
                             f"Detected change in homepen2num from empty to {data['homepen2num']}. Sent command to play input 11.")
 
+                    # Check penalties for the first change
+                    if self.previous_data["awaypen1num"] == "" and data["awaypen1num"] != "":
+                        vmix_response = requests.get(
+                            f"{VMIX_URL}?Function=QuickPlay&Input={AWAYPEN1NUM_INPUT}")
+                        print(
+                            f"Detected change in awaypen1num from empty to {data['awaypen1num']}. Sent command to play input 11.")
+
+                    if self.previous_data["awaypen2number"] == "" and data["awaypen2number"] != "":
+                        vmix_response = requests.get(
+                            f"{VMIX_URL}?Function=QuickPlay&Input={AWAYPEN2NUM_INPUT}")
+                        print(
+                            f"Detected change in awaypen2number from empty to {data['awaypen2number']}. Sent command to play input 11.")
+
                     # Check for homescore change and period
                     if data["homescore"] != self.previous_data["homescore"] and int(data["homescore"]) > int(self.previous_data["homescore"]):
+
                         self.send_vmix_commands_for_score_change(
                             current_period, "homescore")
 
