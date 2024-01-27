@@ -160,6 +160,38 @@ function MainInterface({}: Props) {
                   </div>
                 </div>
               </div>
+              <div className="row mt-3">
+                <div className="col-md-12 d-flex align-items-stretch">
+                  <div className="card flex-lg-grow-1">
+                    <div className="card-body">
+                      {/* Timestamp */}
+                      <label>Timestamp</label>
+                      <div className="input-group">
+                        <input type="number" className="form-control" />
+                        <input type="time" className="form-control" />
+                        <div className="input-group-append">
+                          <button className="btn btn-primary">Save</button>
+                        </div>
+                      </div>
+
+                      <table className="table mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Time</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>6:00 AM</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </>
