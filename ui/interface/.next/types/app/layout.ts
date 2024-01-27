@@ -1,4 +1,4 @@
-// File: D:\work2\controller-script\game-controller\ui\interface\src\app\layout.tsx
+// File: E:\GITHUB\HarrisTime\ui\interface\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
