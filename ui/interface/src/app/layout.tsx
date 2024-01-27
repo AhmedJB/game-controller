@@ -1,3 +1,5 @@
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 export default function RootLayout({
   children,
 }: {
@@ -24,6 +26,18 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <ToastContainer
+position="top-center"
+autoClose={800}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
         <script type="text/javascript" src="/js/mdb.umd.min.js"></script>
       </body>
     </html>
