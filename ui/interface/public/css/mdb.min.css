@@ -14386,7 +14386,7 @@ i.flag-zimbabwe:before {
   height: calc(2.08rem + 2px);
 }
 .input-group .btn {
-  line-height: 1;
+  line-height: 1.4 !important;
 }
 .input-group.input-group-sm .input-group-text {
   height: calc(1.66rem + 2px);
