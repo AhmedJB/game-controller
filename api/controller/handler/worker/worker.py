@@ -122,7 +122,13 @@ class Worker:
                 # checking the gameclock value changes should be enough
                 # if the controller is off and the value didn't change
                 # for 10 min then we trigger the sleep Input ( please verify the input number on your end)
+                # print("remaining time {0} and sleep mode : {1}".format(
+                #   (time.time() - self.last_update_time), self.SCRIPT_IN_SLEEP_MODE))
+                # print("change data : {0} \n check interval : {1}".format(
+                #    self.previous_data["gameclock"] == data["gameclock"], (time.time() - self.last_update_time) > self.SLEEP_TRIGGER_DURATION * 60))
+
                 if self.previous_data["gameclock"] == data["gameclock"] and (time.time() - self.last_update_time) > self.SLEEP_TRIGGER_DURATION * 60 and not self.SCRIPT_IN_SLEEP_MODE:
+                    print("sleep here")
                     self.status = "Sleeping"
                     self.SCRIPT_IN_SLEEP_MODE = True
                     self.log(
@@ -131,7 +137,7 @@ class Worker:
                     vmix_response = requests.get(
                         f"{self.VMIX_URL}?Function=QuickPlay&Input={self.SLEEP_WINDOW_INPUT}")
                 else:
-
+                    print("after time checks")
                     # Check for a change in period and print if there's a change
                     current_period = int(data["period"])
                     if self.previous_data["period"] is None or current_period != self.previous_data["period"]:
@@ -144,7 +150,7 @@ class Worker:
                         self.send_vmix_command(
                             "QuickPlay", value="Input={0}".format(self.QUICKPLAY_INPUT))
                         self.log(
-                            "Detected empty gameclock. Sent command to play input 15.")
+                            f"Detected empty gameclock. Sent command to play input {self.QUICKPLAY_INPUT}.")
                         self.play_input_15_triggered = True
                     elif data["gameclock"] and self.play_input_15_triggered:
                         # Reset trigger if gameclock is no longer empty
@@ -162,26 +168,26 @@ class Worker:
                         vmix_response = requests.get(
                             f"{self.VMIX_URL}?Function=QuickPlay&Input={self.HOMEPEN1NUM_INPUT}")
                         self.log(
-                            f"Detected change in HomePen1num from empty to {data['HomePen1num']}. Sent command to play input 11.")
+                            f"Detected change in HomePen1num from empty to {data['HomePen1num']}. Sent command to play input {self.HOMEPEN1NUM_INPUT}.")
 
                     if self.previous_data["homepen2num"] == "" and data["homepen2num"] != "":
                         vmix_response = requests.get(
                             f"{self.VMIX_URL}?Function=QuickPlay&Input={self.HOMEPEN2NUM_INPUT}")
                         self.log(
-                            f"Detected change in homepen2num from empty to {data['homepen2num']}. Sent command to play input 11.")
+                            f"Detected change in homepen2num from empty to {data['homepen2num']}. Sent command to play input {self.HOMEPEN2NUM_INPUT}.")
 
                     # Check penalties for the first change
                     if self.previous_data["awaypen1num"] == "" and data["awaypen1num"] != "":
                         vmix_response = requests.get(
                             f"{self.VMIX_URL}?Function=QuickPlay&Input={self.AWAYPEN1NUM_INPUT}")
                         self.log(
-                            f"Detected change in awaypen1num from empty to {data['awaypen1num']}. Sent command to play input 11.")
+                            f"Detected change in awaypen1num from empty to {data['awaypen1num']}. Sent command to play input {self.AWAYPEN1NUM_INPUT}.")
 
                     if self.previous_data["awaypen2number"] == "" and data["awaypen2number"] != "":
                         vmix_response = requests.get(
                             f"{self.VMIX_URL}?Function=QuickPlay&Input={self.AWAYPEN2NUM_INPUT}")
                         self.log(
-                            f"Detected change in awaypen2number from empty to {data['awaypen2number']}. Sent command to play input 11.")
+                            f"Detected change in awaypen2number from empty to {data['awaypen2number']}. Sent command to play input {self.AWAYPEN2NUM_INPUT}.")
 
                     # Check for homescore change and period
                     if data["homescore"] != self.previous_data["homescore"] and int(data["homescore"]) > int(self.previous_data["homescore"]):
@@ -193,18 +199,22 @@ class Worker:
                     if data["awayscore"] != self.previous_data["awayscore"] and int(data["awayscore"]) > int(self.previous_data["awayscore"]):
                         self.send_vmix_commands_for_score_change(
                             current_period, "awayscore")
-
+                    print("updating ???")
                     # Update the previous data for scores and gameclock
                     self.previous_data.update({
                         "homescore": data["homescore"],
                         "awayscore": data["awayscore"],
                         "HomePen1num": data["HomePen1num"],
                         "homepen2num": data["homepen2num"],
+                        "awaypen1num": data["awaypen1num"],
+                        "awaypen2number": data["awaypen2number"],
                         "gameclock": data["gameclock"]
                         # "period" is already updated above
                     })
-                    # we update the update timestamp
-                    self.last_update_time = time.time()
+                    if self.previous_data["gameclock"] != data["gameclock"]:
+                        # we update the update timestamp
+                        self.SCRIPT_IN_SLEEP_MODE = False
+                        self.last_update_time = time.time()
 
             except requests.exceptions.RequestException as e:
                 self.log(f"HTTP Request Error: {e}")
